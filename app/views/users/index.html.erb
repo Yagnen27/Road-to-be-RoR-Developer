@@ -10,19 +10,23 @@
     <table class="table table-bordered">
         <thead>
           <tr>
-               <th>Name</th>
+              <th>Name</th>
               <th>Contact</th>
               <th>E-mail</th>
               <th>Address</th>
+              <th>Actions</th>
          </tr>
        </thead> 
        <tbody>
           <% @users.each do |user| %>
           <tr>
-               <td><%= user.name %></td>
-               <td><%= user.contact %></td>
-               <td><%= user.email %></td>
+              <td><%= user.name %></td>
+              <td><%= user.contact %></td>
+              <td><%= user.email %></td>
               <td><%= user.full_address %></td>
+              <td>
+                <%= link_to "Edit", edit_user_path(user), class: "btn btn-primary" %>
+              </td>
            </tr>
          <% end %>
       </tbody>
